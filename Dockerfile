@@ -22,17 +22,17 @@ WORKDIR /
 RUN rm -rf v0.7.17.tar.gz bwa-0.7.17
 
 
-RUN curl -LO https://github.com/samtools/samtools/releases/download/1.9/samtools-1.9.tar.bz2
+RUN curl -LO https://github.com/samtools/samtools/releases/download/1.10/samtools-1.10.tar.bz2
 
-RUN tar jxf samtools-1.9.tar.bz2
+RUN tar jxf samtools-1.10.tar.bz2
 
-WORKDIR /samtools-1.9
+WORKDIR /samtools-1.10
 
 RUN autoheader && autoconf -Wno-syntax && ./configure && make && make install
 
 WORKDIR /
 
-RUN rm -rf samtools-1.9 samtools-1.9.tar.bz2
+RUN rm -rf samtools-1.10 samtools-1.10.tar.bz2
 
 
 
